@@ -44,14 +44,14 @@ jobs:
         architecture: ${{ matrix.architecture }}
 
     - name: Cache MacOS deps
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       if: startswith(matrix.os, 'macos')
       with:
         path: macos-cache
         key: ${{ runner.OS }}-deps-${{ hashFiles('.ci/macos_versions.sh') }}
 
     - name: Cache MacOS gst-devel deps
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       if: startswith(matrix.os, 'macos')
       with:
         path: macos-cache-gst-devel
